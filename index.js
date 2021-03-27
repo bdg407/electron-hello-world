@@ -6,7 +6,8 @@ function onClosed() {
     mainWindow = null;
 }
 
-app.on('ready', () => {
+function createWindow() {
+
     mainWindow = new BrowserWindow({
         width: 640,
         height: 480
@@ -14,4 +15,23 @@ app.on('ready', () => {
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     mainWindow.on('closed', onClosed);
+
+}
+
+app.on('window-all-closed', () => {
+    app.quit();
+})
+
+app.on('activate', () => {
+
+    if(!mainWindow) {
+        createWindow();
+    }
+
+})
+
+app.on('ready', () => {
+
+    createWindow();
+
 })
