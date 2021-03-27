@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "bulid": "electron-packager . --out=dist --asar --overwrite --all"
   },
   "dependencies": {
     "electron": "^12.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.2.0"
   }
 }
