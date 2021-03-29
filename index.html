@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World!</h1>
+<h1 id="greeting">Hello World!</h1>
+<script>
+    const greeting = require('./greeting.json');
+    document.querySelector('#greeting').textContent = greeting.message;
+</script>
 </body>
 </html>

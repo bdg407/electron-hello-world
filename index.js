@@ -1,3 +1,4 @@
+const path = require("path");
 const { app, BrowserWindow } = require('electron');
 
 let mainWindow;
@@ -10,7 +11,11 @@ function createWindow() {
 
     mainWindow = new BrowserWindow({
         width: 640,
-        height: 480
+        height: 480,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation : false
+        }
     })
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);
